@@ -1,0 +1,9 @@
+{
+  "query": "UPDATE products SET imageUrl = '/samsung-s24-ultra.jpg' WHERE name = 'Samsung Galaxy S24 Ultra';\nUPDATE products SET imageUrl = '/samsung-s24.jpg' WHERE name = 'Samsung Galaxy S24';\nUPDATE products SET imageUrl = '/samsung-z-fold5.jpg' WHERE name = 'Samsung Galaxy Z Fold 5';\nUPDATE products SET imageUrl = '/samsung-a54.jpg' WHERE name = 'Samsung Galaxy A54 5G';\nUPDATE products SET imageUrl = '/samsung-z-flip5.jpg' WHERE name = 'Samsung Galaxy Z Flip 5';",
+  "command": "mysql --batch --raw --column-names --default-character-set=utf8mb4 --host gateway02.us-east-1.prod.aws.tidbcloud.com --port 4000 --user 3kFXBqHg1M6nGq4.be837881423d --database cCAe2woT92jptFhy7YujsQ --execute UPDATE products SET imageUrl = '/samsung-s24-ultra.jpg' WHERE name = 'Samsung Galaxy S24 Ultra';\nUPDATE products SET imageUrl = '/samsung-s24.jpg' WHERE name = 'Samsung Galaxy S24';\nUPDATE products SET imageUrl = '/samsung-z-fold5.jpg' WHERE name = 'Samsung Galaxy Z Fold 5';\nUPDATE products SET imageUrl = '/samsung-a54.jpg' WHERE name = 'Samsung Galaxy A54 5G';\nUPDATE products SET imageUrl = '/samsung-z-flip5.jpg' WHERE name = 'Samsung Galaxy Z Flip 5';",
+  "rows": [],
+  "messages": [],
+  "stdout": "",
+  "stderr": "",
+  "execution_time_ms": 2388
+}
