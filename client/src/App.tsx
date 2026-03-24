@@ -11,7 +11,7 @@ import UserDashboard from "./pages/UserDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AdminRoute from "./components/AdminRoute";
-import RepairStatus from "./pages/RepairStatus";
+
 import ITServices from "./pages/ITServices";
 import Products from "./pages/Products";
 import Blog from "./pages/Blog";
@@ -24,7 +24,7 @@ function Router() {
   return (
     <Switch>
       <Route path={"/"} component={Home} />
-      <Route path={"/repair-status"} component={RepairStatus} />
+
       <Route path={"/it-services"} component={ITServices} />
       <Route path={"/products"} component={Products} />
       <Route path={"/blog"} component={Blog} />

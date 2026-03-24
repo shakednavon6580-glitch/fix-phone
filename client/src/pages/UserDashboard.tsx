@@ -133,25 +133,7 @@ export default function UserDashboard() {
                 <p className="text-sm text-muted-foreground">עיין בקטלוג המוצרים</p>
               </a>
 
-              <a
-                href="/repair-status"
-                className="glass-card p-6 rounded-xl transition-all duration-300"
-                style={{
-                  background: 'rgba(147, 51, 234, 0.1)',
-                  border: '1px solid rgba(147, 51, 234, 0.3)',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-4px)';
-                  e.currentTarget.style.boxShadow = '0 10px 30px rgba(147, 51, 234, 0.3)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
-              >
-                <h3 className="text-xl font-bold text-foreground mb-2">מעקב תיקון</h3>
-                <p className="text-sm text-muted-foreground">בדוק סטטוס תיקון</p>
-              </a>
+
             </div>
           </div>
         </div>

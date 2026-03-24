@@ -32,11 +32,7 @@ export default function Home() {
               </Link>
             </div>
             <div className="hidden md:flex items-center gap-4">
-              <Link href="/repair-status">
-                <Button variant="ghost" className="hover-glow-primary" style={{backgroundColor: '#211731'}}>
-                  מעקב תיקון
-                </Button>
-              </Link>
+
               <Link href="/products">
                 <Button variant="ghost" className="hover-glow-primary" style={{backgroundColor: '#211731'}}>
                   מוצרים
@@ -160,15 +156,7 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="flex items-start gap-3 group/item">
-                    <CheckCircle2 className="w-5 h-5 text-primary mt-1 group-hover/item:scale-110 transition-smooth" />
-                    <div>
-                      <h3 className="font-semibold text-foreground mb-1">מעקב בזמן אמת</h3>
-                      <p className="text-sm text-muted-foreground">
-                        עקוב אחר סטטוס התיקון בכל רגע דרך הפורטל המקוון שלנו
-                      </p>
-                    </div>
-                  </div>
+
 
                   <div className="flex items-start gap-3 group/item">
                     <CheckCircle2 className="w-5 h-5 text-primary mt-1 group-hover/item:scale-110 transition-smooth" />

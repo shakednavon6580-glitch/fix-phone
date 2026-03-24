@@ -4,11 +4,11 @@ import { Link } from "wouter";
 
 export function Footer() {
   const handleWhatsAppClick = () => {
-    window.open('https://wa.me/972XXXXXXXXX', '_blank'); // Replace with actual WhatsApp number
+    window.open('https://wa.me/97236728841', '_blank');
   };
 
   const handlePhoneClick = () => {
-    window.location.href = 'tel:+972XXXXXXXXX'; // Replace with actual phone number
+    window.location.href = 'tel:03-672-8841';
   };
 
   return (
@@ -35,11 +35,7 @@ export function Footer() {
                   <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer block">דף הבית</span>
                 </Link>
               </li>
-              <li>
-                <Link href="/repair-status">
-                  <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer block">מעקב תיקון</span>
-                </Link>
-              </li>
+
               <li>
                 <Link href="/products">
                   <span className="text-muted-foreground hover:text-primary transition-colors cursor-pointer block">קטלוג מוצרים</span>
@@ -64,15 +60,15 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span>רחוב הדוגמה 123, תל אביב</span>
+                <span>רחוב יגאל אלון 94, תל אביב-יפו</span>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
                 <Phone className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span dir="ltr">+972 XX-XXX-XXXX</span>
+                <span dir="ltr">03-672-8841</span>
               </li>
               <li className="flex items-start gap-3 text-muted-foreground">
                 <Mail className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <span>support@fixphone.co.il</span>
+                <span>fixphone.tlv.office@gmail.com</span>
               </li>
               <li>
                 <Link href="/login">
