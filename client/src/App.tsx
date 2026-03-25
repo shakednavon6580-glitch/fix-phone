@@ -18,6 +18,7 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import Admin from "./pages/Admin";
 import ChatWidget from "./components/ChatWidget";
+import { CartProvider } from "./contexts/CartContext";
 
 function Router() {
   // make sure to consider if you need authentication for certain routes
@@ -61,11 +62,13 @@ function App() {
           defaultTheme="dark"
           // switchable
         >
-          <TooltipProvider>
-            <Toaster />
-            <Router />
-            <ChatWidget />
-          </TooltipProvider>
+          <CartProvider>
+            <TooltipProvider>
+              <Toaster />
+              <Router />
+              <ChatWidget />
+            </TooltipProvider>
+          </CartProvider>
         </ThemeProvider>
       </AuthProvider>
     </ErrorBoundary>

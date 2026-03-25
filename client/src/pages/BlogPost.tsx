@@ -5,6 +5,7 @@ import { Smartphone, ArrowRight, Calendar, User } from "lucide-react";
 import { Link, useParams } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/Navbar";
 
 export default function BlogPost() {
   const params = useParams();
@@ -17,27 +18,7 @@ export default function BlogPost() {
 
   return (
     <div className="min-h-screen">
-      {/* Navigation */}
-      <nav className="fixed top-0 right-0 left-0 z-50 glass-strong">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/">
-              <div className="flex items-center gap-3 cursor-pointer">
-                <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center">
-                  <Smartphone className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <span className="text-2xl font-bold text-gradient-primary">Fix Phone</span>
-              </div>
-            </Link>
-            <Link href="/blog">
-              <Button variant="ghost" className="hover-glow-primary">
-                <ArrowRight className="ml-2 w-4 h-4" />
-                חזרה לבלוג
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Main Content */}
       <div className="pt-32 pb-20">

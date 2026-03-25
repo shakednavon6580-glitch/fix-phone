@@ -11,6 +11,7 @@ import { Link } from "wouter";
 import { trpc } from "@/lib/trpc";
 import { toast } from "sonner";
 import { Footer } from "@/components/Footer";
+import { Navbar } from "@/components/Navbar";
 
 const services = [
   { id: "managed-it", label: "ניהול IT מלא", icon: Server },
@@ -81,27 +82,7 @@ export default function ITServices() {
 
   return (
     <div className="min-h-screen">
-      {/* Navigation */}
-      <nav className="fixed top-0 right-0 left-0 z-50 glass-strong">
-        <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/">
-              <div className="flex items-center gap-3 cursor-pointer">
-                <div className="w-10 h-10 rounded-lg gradient-primary flex items-center justify-center">
-                  <Smartphone className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <span className="text-2xl font-bold text-gradient-primary">Fix Phone</span>
-              </div>
-            </Link>
-            <Link href="/">
-              <Button variant="ghost" className="hover-glow-primary">
-                <ArrowRight className="ml-2 w-4 h-4" />
-                חזרה לדף הבית
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <section className="pt-32 pb-20 relative overflow-hidden">
