@@ -8,16 +8,16 @@ import { Navbar } from "@/components/Navbar";
 import { useCart } from "@/contexts/CartContext";
 
 const DUMMY_PRODUCTS = [
-  { id: 1, category: "טלפונים", name: 'iPhone 15 Pro Max 256GB', price: 5400 },
-  { id: 2, category: "טלפונים", name: 'Samsung Galaxy S24 Ultra', price: 4800 },
-  { id: 3, category: "שעונים", name: 'Apple Watch Ultra 2', price: 3200 },
-  { id: 4, category: "שעונים", name: 'Galaxy Watch 6 Classic', price: 1400 },
-  { id: 5, category: "מחשבים", name: 'MacBook Air M3 13"', price: 5100 },
-  { id: 6, category: "מחשבים", name: 'Dell XPS 13 9315', price: 4900 },
+  { id: 1, category: "טלפונים", name: 'iPhone 15 Pro Max 256GB', price: 5400, imageUrl: "/images/iphone_15_pro_max.png" },
+  { id: 2, category: "טלפונים", name: 'Samsung Galaxy S24 Ultra', price: 4800, imageUrl: "/images/samsung_galaxy_s24_ultra.png" },
+  { id: 3, category: "שעונים", name: 'Apple Watch Ultra 2', price: 3200, imageUrl: "/images/apple_watch_ultra_2.png" },
+  { id: 4, category: "שעונים", name: 'Galaxy Watch 6 Classic', price: 1400, imageUrl: null },
+  { id: 5, category: "מחשבים", name: 'MacBook Air M3 13"', price: 5100, imageUrl: null },
+  { id: 6, category: "מחשבים", name: 'Dell XPS 13 9315', price: 4900, imageUrl: null },
 ];
 
 export default function Products() {
-  const { addToCart } = useCart();
+  const { cartItemsCount, addToCart } = useCart();
   const [selectedCategory, setSelectedCategory] = useState<string>("all");
 
   const categories = ["all", ...Array.from(new Set(DUMMY_PRODUCTS.map((p) => p.category)))];
@@ -65,9 +65,12 @@ export default function Products() {
                 key={product.id}
                 className="glass-card overflow-hidden hover-glow-primary transition-smooth bg-card/60 backdrop-blur-md text-card-foreground border border-border"
               >
-                <div className="h-64 bg-gradient-to-br from-primary/10 to-secondary/10 flex items-center justify-center overflow-hidden">
-                   {/* High Res Placeholder */}
-                   <Package className="w-24 h-24 text-primary opacity-50" />
+                <div className="h-64 bg-white flex items-center justify-center overflow-hidden p-6 relative group-hover:bg-gray-50 transition-colors">
+                  {product.imageUrl ? (
+                    <img src={product.imageUrl} alt={product.name} className="w-full h-full object-contain mix-blend-multiply drop-shadow-lg" />
+                  ) : (
+                    <Package className="w-24 h-24 text-primary opacity-50" />
+                  )}
                 </div>
                 <div className="p-6 flex flex-col justify-between h-[200px]">
                   <div>
@@ -97,6 +100,19 @@ export default function Products() {
           </div>
         </div>
       </div>
+      
+      {/* Floating Cart Button */}
+      <div className="fixed bottom-6 left-6 z-50">
+        <Button size="lg" className="rounded-full shadow-2xl h-16 w-16 relative gradient-primary hover-glow-primary hover:scale-105 transition-transform border-2 border-primary/20">
+          <ShoppingCart className="w-7 h-7 text-white" />
+          {cartItemsCount > 0 && (
+            <Badge className="absolute -top-2 -right-2 px-2.5 py-1 text-sm bg-destructive text-destructive-foreground rounded-full border-2 border-background animate-in zoom-in">
+              {cartItemsCount}
+            </Badge>
+          )}
+        </Button>
+      </div>
+
       <Footer />
     </div>
   );

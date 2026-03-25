@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
-import { Search, User, MessageSquare, Calendar } from "lucide-react";
+import { Search, ExternalLink, MessageSquare, Calendar } from "lucide-react";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 
@@ -14,7 +14,8 @@ const DUMMY_POSTS = [
     category: "תחזוקה",
     excerpt: "טיפים עדכניים לטעינה נכונה וניהול מחזורי טעינה במכשירי אפל ואנדרואיד.",
     date: "24/03/2026",
-    commentsCount: 12
+    commentsCount: 12,
+    link: "https://support.apple.com/he-il/HT208387"
   },
   {
     id: 2,
@@ -22,7 +23,8 @@ const DUMMY_POSTS = [
     category: "חדשנות",
     excerpt: "סקירה על כלים חדשים המאפשרים אבחון תקלות בלוח האם באמצעות בינה מלאכותית.",
     date: "22/03/2026",
-    commentsCount: 8
+    commentsCount: 8,
+    link: "https://www.theverge.com/ai"
   },
   {
     id: 3,
@@ -30,7 +32,8 @@ const DUMMY_POSTS = [
     category: "IT & Cyber",
     excerpt: "צעדים ראשונים בהגנה על שרת ה-SaaS הארגוני שלכם מפני התקפות כופר.",
     date: "15/03/2026",
-    commentsCount: 24
+    commentsCount: 24,
+    link: "https://www.cisco.com/c/en/us/products/security/what-is-cybersecurity.html"
   },
   {
     id: 4,
@@ -38,7 +41,8 @@ const DUMMY_POSTS = [
     category: "חומרה",
     excerpt: "ניתוח ביצועים ביישומי עריכה כבדים וניהול זיכרון מאוחד.",
     date: "10/03/2026",
-    commentsCount: 45
+    commentsCount: 45,
+    link: "https://www.tomsguide.com/computing/macbooks/m3-vs-m4-macbook"
   }
 ];
 
@@ -92,13 +96,11 @@ export default function Blog() {
             {DUMMY_POSTS.map((post) => (
               <Card key={post.id} className="p-6 bg-[#120f18] hover:bg-[#16131c] border border-border/40 hover:border-primary/40 transition-all duration-300 shadow-none rounded-xl overflow-hidden cursor-pointer group">
                 <div className="flex flex-col md:flex-row gap-5">
-                  <div className="flex-shrink-0">
-                    <div className="w-12 h-12 rounded-full gradient-secondary flex items-center justify-center text-white shadow-lg group-hover:scale-110 transition-transform">
-                      <User className="w-6 h-6" />
-                    </div>
-                  </div>
                   <div className="flex-1 min-w-0">
-                    <h2 className="text-2xl font-bold mb-2 text-foreground truncate group-hover:text-primary transition-colors">{post.title}</h2>
+                    <a href={post.link} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 mb-2 group-hover:text-primary transition-colors w-fit">
+                      <h2 className="text-2xl font-bold text-foreground truncate">{post.title}</h2>
+                      <ExternalLink className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0" />
+                    </a>
                     <p className="text-muted-foreground line-clamp-2 mb-5">
                       {post.excerpt}
                     </p>

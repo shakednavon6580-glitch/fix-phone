@@ -1,12 +1,8 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { MessageCircle, Phone, ShoppingCart } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { useCart } from "@/contexts/CartContext";
+import { MessageCircle, Phone } from "lucide-react";
 
 export function Navbar() {
-  const { cartItemsCount } = useCart();
-
   const handleWhatsAppClick = () => {
     window.open("https://wa.me/972XXXXXXXXX", "_blank");
   };
@@ -36,17 +32,6 @@ export function Navbar() {
                   התחבר
                 </Button>
               </Link>
-              
-              <div className="relative flex items-center">
-                <Button variant="ghost" className="hover-glow-primary p-2" style={{ backgroundColor: "#211731" }}>
-                  <ShoppingCart className="w-5 h-5" />
-                </Button>
-                {cartItemsCount > 0 && (
-                  <Badge className="absolute -top-1 -right-1 px-1.5 py-0.5 min-w-[1.25rem] text-xs flex items-center justify-center bg-destructive text-destructive-foreground">
-                    {cartItemsCount}
-                  </Badge>
-                )}
-              </div>
             </div>
           </div>
 
@@ -91,17 +76,6 @@ export function Navbar() {
 
           {/* Mobile Actions */}
           <div className="flex md:hidden items-center gap-3">
-            <div className="relative flex items-center ml-2">
-              <Button variant="ghost" className="hover-glow-primary p-2 h-10 w-10">
-                <ShoppingCart className="w-5 h-5" />
-              </Button>
-              {cartItemsCount > 0 && (
-                <Badge className="absolute -top-1 -right-1 px-1.5 py-0.5 min-w-[1.25rem] text-xs flex items-center justify-center bg-destructive text-destructive-foreground">
-                  {cartItemsCount}
-                </Badge>
-              )}
-            </div>
-            
             <Button
               variant="outline"
               size="icon"
