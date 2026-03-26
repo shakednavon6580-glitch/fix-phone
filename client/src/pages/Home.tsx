@@ -265,6 +265,7 @@ export default function Home() {
 
             <Card className="glass-card p-6 hover-glow-secondary transition-smooth text-center">
               <div className="w-16 h-16 rounded-xl gradient-accent flex items-center justify-center mx-auto mb-4">
+                <Shield className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-bold mb-3 text-foreground">אמינות ואחריות</h3>
               <p className="text-muted-foreground">

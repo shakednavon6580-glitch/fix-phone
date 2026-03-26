@@ -1,19 +1,11 @@
-import { defineConfig } from "vitest/config";
-import path from "path";
+/// <reference types="vitest" />
+import { defineConfig, mergeConfig } from 'vite';
+import viteConfig from './vite.config.ts';
 
-const templateRoot = path.resolve(import.meta.dirname);
-
-export default defineConfig({
-  root: templateRoot,
-  resolve: {
-    alias: {
-      "@": path.resolve(templateRoot, "client", "src"),
-      "@shared": path.resolve(templateRoot, "shared"),
-      "@assets": path.resolve(templateRoot, "attached_assets"),
-    },
-  },
+export default mergeConfig(viteConfig, defineConfig({
   test: {
-    environment: "node",
-    include: ["server/**/*.test.ts", "server/**/*.spec.ts"],
+    globals: true,
+    environment: 'jsdom',
+    setupFiles: './client/src/setupTests.ts',
   },
-});
+}));
