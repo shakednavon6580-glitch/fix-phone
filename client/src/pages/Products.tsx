@@ -11,9 +11,9 @@ const DUMMY_PRODUCTS = [
   { id: 1, category: "טלפונים", name: 'iPhone 15 Pro Max 256GB', price: 5400, imageUrl: "/images/iphone_15_pro_max.png" },
   { id: 2, category: "טלפונים", name: 'Samsung Galaxy S24 Ultra', price: 4800, imageUrl: "/images/samsung_galaxy_s24_ultra.png" },
   { id: 3, category: "שעונים", name: 'Apple Watch Ultra 2', price: 3200, imageUrl: "/images/apple_watch_ultra_2.png" },
-  { id: 4, category: "שעונים", name: 'Galaxy Watch 6 Classic', price: 1400, imageUrl: "/images/galaxy_watch_placeholder.svg" },
-  { id: 5, category: "מחשבים", name: 'MacBook Air M3 13"', price: 5100, imageUrl: "/images/macbook_air_placeholder.svg" },
-  { id: 6, category: "מחשבים", name: 'Dell XPS 13 9315', price: 4900, imageUrl: "/images/dell_xps_placeholder.svg" },
+  { id: 4, category: "שעונים", name: 'Galaxy Watch 6 Classic', price: 1400, imageUrl: "/images/galaxy_watch.png" },
+  { id: 5, category: "מחשבים", name: 'MacBook Air M3 13"', price: 5100, imageUrl: "/images/macbook_air.png" },
+  { id: 6, category: "מחשבים", name: 'Dell XPS 13 9315', price: 4900, imageUrl: "/images/dell_xps.png" },
 ];
 
 export default function Products() {

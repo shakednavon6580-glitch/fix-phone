@@ -21,15 +21,15 @@ describe('Products UI Component Tests', () => {
     expect(images).toHaveLength(6);
   });
 
-  it('renders the 3 bottom products as square SVG placeholders', () => {
+  it('renders the 3 bottom products with User attached images', () => {
     render(<Products />);
     const images = screen.getAllByRole('img') as HTMLImageElement[];
-    const placeholders = images.filter(img => img.src.includes('placeholder.svg'));
+    const placeholders = images.filter(img => img.src.includes('galaxy_watch.png') || img.src.includes('macbook_air.png') || img.src.includes('dell_xps.png'));
     expect(placeholders).toHaveLength(3);
     
-    const hasGalaxyWatch = placeholders.some(img => img.src.includes('galaxy_watch_placeholder.svg'));
-    const hasMacbookAir = placeholders.some(img => img.src.includes('macbook_air_placeholder.svg'));
-    const hasDellXps = placeholders.some(img => img.src.includes('dell_xps_placeholder.svg'));
+    const hasGalaxyWatch = placeholders.some(img => img.src.includes('galaxy_watch.png'));
+    const hasMacbookAir = placeholders.some(img => img.src.includes('macbook_air.png'));
+    const hasDellXps = placeholders.some(img => img.src.includes('dell_xps.png'));
     
     expect(hasGalaxyWatch).toBe(true);
     expect(hasMacbookAir).toBe(true);
